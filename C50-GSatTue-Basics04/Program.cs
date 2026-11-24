@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Reflection;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace C50_GSatTue_Basics04
@@ -89,11 +90,20 @@ namespace C50_GSatTue_Basics04
             #endregion
 
             #region Q10
-            //Write a method PrintBookInfo(string title, int pages = 300) where pages is optional. Call
-            //it once with only a title, and once passing both a title and pages.
-            PrintBookInfo("Clean Code");
+            ////Write a method PrintBookInfo(string title, int pages = 300) where pages is optional. Call
+            ////it once with only a title, and once passing both a title and pages.
+            //PrintBookInfo("Clean Code");
+            //int pages = 900;
+            //PrintBookInfo("Clean Code with pages", pages);
+            #endregion
+
+
+            #region Q11
+            //Using the PrintBookInfo method from the question above, call it by naming the
+            //parameters, passing pages before title.
             int pages = 900;
-            PrintBookInfo("Clean Code with pages", pages);
+            PrintBookInfo(pages: pages, title: "Clean Code in q11");
+
             #endregion
         }
 
