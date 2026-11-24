@@ -99,11 +99,22 @@ namespace C50_GSatTue_Basics04
 
 
             #region Q11
-            //Using the PrintBookInfo method from the question above, call it by naming the
-            //parameters, passing pages before title.
-            int pages = 900;
-            PrintBookInfo(pages: pages, title: "Clean Code in q11");
+            ////Using the PrintBookInfo method from the question above, call it by naming the
+            ////parameters, passing pages before title.
+            //int pages = 900;
+            //PrintBookInfo(pages: pages, title: "Clean Code in q11");
 
+            #endregion
+
+            #region Q12
+            //Write a method PrintAllTitles(params string[] titles) that prints each title on its own line.
+            //Call it with three book titles.
+            string bookTitle1 = "book1";
+            string bookTitle2 = "book2";
+            string bookTitle3 = "book3";
+
+
+            PrintAllTitles(bookTitle1,bookTitle2,bookTitle3);
             #endregion
         }
 
@@ -153,9 +164,17 @@ namespace C50_GSatTue_Basics04
         //    return false;
         //}
 
-        static void PrintBookInfo(string title, int pages = 300)
+        //static void PrintBookInfo(string title, int pages = 300)
+        //{
+        //    Console.WriteLine($"title is :{title} and the pages are:{pages}");
+        //}
+        static void PrintAllTitles(params string[] titles)
         {
-            Console.WriteLine($"title is :{title} and the pages are:{pages}");
+            foreach (string bookTitle in titles)
+            {
+                Console.WriteLine(bookTitle);
+            }
+
         }
         #endregion
     }
