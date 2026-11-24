@@ -1,4 +1,5 @@
-﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+﻿using System.Drawing;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace C50_GSatTue_Basics04
 {
@@ -58,11 +59,22 @@ namespace C50_GSatTue_Basics04
             #endregion
 
             #region Q07
-            //Rewrite the method from question 5 as AddBonusPagesByRef(ref int pages) using ref.
-            // Call it and print pages afterward. How is the result different from question 5 ?
-            int pages = 400;
-            AddBonusPagesByRef(ref pages);
-            Console.WriteLine(pages);//450 because we passed the parameter using ref ,which effect the  original variable itself
+            ////Rewrite the method from question 5 as AddBonusPagesByRef(ref int pages) using ref.
+            //// Call it and print pages afterward. How is the result different from question 5 ?
+            //int pages = 400;
+            //AddBonusPagesByRef(ref pages);
+            //Console.WriteLine(pages);//450 because we passed the parameter using ref ,which effect the  original variable itself
+
+            #endregion
+
+
+            #region Q08
+            //Write a method ReplaceArray(ref double[] prices) that replaces prices entirely with a
+            //new array { 10.0, 12.5, 15.0 }.Call it with your prices array and print prices.Length
+            //afterward
+            double[] prices = { 25.5, 40.0 };
+            ReplaceArray(ref prices);
+            Console.WriteLine(prices.Length);
 
             #endregion
         }
@@ -88,10 +100,17 @@ namespace C50_GSatTue_Basics04
         //        return prices;
         //    }
 
-        static int AddBonusPagesByRef(ref int pages)
-        {
-            return pages + 50;
+        //static int AddBonusPagesByRef(ref int pages)
+        //{
+        //    return pages + 50;
 
+
+        //}
+
+        static double[] ReplaceArray(ref double[] prices)
+        {
+            prices = new double[] { 10.0, 12.5, 15.0 };
+            return prices;
 
         }
 
