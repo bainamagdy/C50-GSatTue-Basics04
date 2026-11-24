@@ -40,9 +40,9 @@ namespace C50_GSatTue_Basics04
             #region  Q05
             //Write a method AddBonusPages(int pages) that adds 50 to pages. Call it with a variable
             //int pages = 400; and print pages afterward. What do you expect to see, and why?
-            int pages = 400;
-            int res = AddBonusPages(pages);
-            Console.WriteLine(pages);//pages = 400 because it value type method not effect on it 
+            //int pages = 400;
+            //int res = AddBonusPages(pages);
+            //Console.WriteLine(pages);//pages = 400 because it value type method not effect on it 
 
 
             #endregion
@@ -56,7 +56,18 @@ namespace C50_GSatTue_Basics04
             //Console.WriteLine(prices[0]);//20.5 because it ref type method  create the operation on the same ref
 
             #endregion
+
+            #region Q07
+            //Rewrite the method from question 5 as AddBonusPagesByRef(ref int pages) using ref.
+            // Call it and print pages afterward. How is the result different from question 5 ?
+            int pages = 400;
+            AddBonusPagesByRef(ref pages);
+            Console.WriteLine(pages);//450 because we passed the parameter using ref ,which effect the  original variable itself
+
+            #endregion
         }
+
+        #region Fun
         //static void PrintWelcomMessage()
         //{
         //    Console.WriteLine("Welcom to the Library!.");
@@ -67,14 +78,23 @@ namespace C50_GSatTue_Basics04
         //    Console.WriteLine("Book title: " + title);
         //}
 
-        static int AddBonusPages(int pages)
-        {
-            return pages + 50;
-        }
+        //static int AddBonusPages(int pages)
+        //{
+        //    return pages + 50;
+        //}
         //    static double[] ApplyDiscount(double[] prices )
         //    {
         //        prices[0] -= 5;
         //        return prices;
         //    }
+
+        static int AddBonusPagesByRef(ref int pages)
+        {
+            return pages + 50;
+
+
+        }
+
+        #endregion
     }
 }
